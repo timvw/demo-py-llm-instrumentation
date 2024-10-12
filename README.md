@@ -27,7 +27,6 @@ rye add openinference-instrumentation-openai
 Use [opentelemetry-instrument](https://opentelemetry.io/docs/languages/python/getting-started/#run-the-instrumented-app) to launch the sample aplication:
 
 ```bash
-OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true \
 rye run opentelemetry-instrument \
     --service_name demo \
     --traces_exporter otlp \
@@ -44,7 +43,15 @@ Offcourse you can also capture traces without the opentelemetry-instrumentation 
 Simply configure the OpenTelemetry SDK in your application and run it as usual.
 
 ```bash
-OTEL_EXPORTER_OTLP_TRACES_ENDPOINT="http://localhost:4317" \
-OTEL_EXPORTER_OTLP_TRACES_INSECURE="true" \
 rye run python -m demo.02_openai_chat
 ```
+
+Let's populate a [LanceDB](https://github.com/lancedb/lancedb) table which we can use as [vector store](https://python.langchain.com/docs/concepts/#vector-stores)
+
+```bash
+rye run python -m demo.03_build_vector_store
+```
+
+The langchain call to create embeddings is also captured:
+
+![screenshot of traced embedding in phoenix](./images/embedding-trace.png)

@@ -11,6 +11,12 @@ dependencies = [
     "openinference-instrumentation-openai>=0.1.14",
     "opentelemetry-distro>=0.48b0",
     "opentelemetry-exporter-otlp>=1.27.0",
+    "lancedb>=0.14.0",
+    "langchain>=0.3.3",
+    "langchain-openai>=0.2.2",
+    "unstructured>=0.15.14",
+    "langchain-community>=0.3.2",
+    "openinference-instrumentation-langchain>=0.1.28",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
