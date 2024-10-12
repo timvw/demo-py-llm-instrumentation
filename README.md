@@ -40,3 +40,11 @@ And now you can observe the traces in Phoenix:
 
 ![screenshot of traces in phoenix](./images/openai-traces.png)
 
+Offcourse you can also capture traces without the opentelemetry-instrumentation app.
+Simply configure the OpenTelemetry SDK in your application and run it as usual.
+
+```bash
+OTEL_EXPORTER_OTLP_TRACES_ENDPOINT="http://localhost:4317" \
+OTEL_EXPORTER_OTLP_TRACES_INSECURE="true" \
+rye run python -m demo.02_openai_chat
+```

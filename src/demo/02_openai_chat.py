@@ -1,11 +1,12 @@
 import dotenv
 from openai import OpenAI
-from openinference.instrumentation.openai import OpenAIInstrumentor
+from demo import otel
 
 if __name__ == "__main__":
     dotenv.load_dotenv()
 
-    OpenAIInstrumentor().instrument()
+    otel.init_otel_tracing()
+    otel.init_instrumentation()
 
     client = OpenAI()
 
