@@ -63,3 +63,7 @@ rye run python -m demo.04_langchain_rag
 ```
 
 ![screenshot of langchain traces in phoenix](./images/langchain-traces.png)
+
+It's also possible to look into the details of a trace:
+
+![screenshot of langchain trace details in phoenix](./images/trace-deep.png)
