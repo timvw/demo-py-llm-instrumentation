@@ -8,6 +8,9 @@ authors = [
 dependencies = [
     "openai>=1.51.2",
     "python-dotenv>=1.0.1",
+    "openinference-instrumentation-openai>=0.1.14",
+    "opentelemetry-distro>=0.48b0",
+    "opentelemetry-exporter-otlp>=1.27.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

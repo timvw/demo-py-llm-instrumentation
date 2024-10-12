@@ -17,3 +17,26 @@ Now run a sample application:
 ```bash
 rye run python -m demo.01_openai_chat
 ```
+
+Install instrumentation package(s):
+
+```bash
+rye add openinference-instrumentation-openai
+```
+
+Use [opentelemetry-instrument](https://opentelemetry.io/docs/languages/python/getting-started/#run-the-instrumented-app) to launch the sample aplication:
+
+```bash
+OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true \
+rye run opentelemetry-instrument \
+    --service_name demo \
+    --traces_exporter otlp \
+    --exporter_otlp_endpoint 0.0.0.0:4317 \
+    --exporter_otlp_traces_insecure true \
+    python -m demo.01_openai_chat
+```
+
+And now you can observe the traces in Phoenix:
+
+![screenshot of traces in phoenix](./images/openai-traces.png)
+
