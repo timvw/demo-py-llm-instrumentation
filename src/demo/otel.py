@@ -5,6 +5,7 @@ from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExport
 from openinference.instrumentation.openai import OpenAIInstrumentor
 from openinference.instrumentation.langchain import LangChainInstrumentor
 
+
 def init_otel_tracing() -> None:
     trace_provider = TracerProvider()
     trace_provider.add_span_processor(BatchSpanProcessor(OTLPSpanExporter()))
@@ -13,5 +14,4 @@ def init_otel_tracing() -> None:
 
 def init_instrumentation() -> None:
     OpenAIInstrumentor().instrument()
-    #LangChainInstrumentor().instrument()
-
+    # LangChainInstrumentor().instrument()

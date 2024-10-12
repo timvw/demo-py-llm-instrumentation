@@ -39,7 +39,7 @@ And now you can observe the traces in Phoenix:
 
 ![screenshot of traces in phoenix](./images/openai-traces.png)
 
-Offcourse you can also capture traces without the opentelemetry-instrumentation app.
+Off course, you can also capture traces without the opentelemetry-instrumentation app.
 Simply configure the OpenTelemetry SDK in your application and run it as usual.
 
 ```bash
@@ -55,3 +55,11 @@ rye run python -m demo.03_build_vector_store
 The langchain call to create embeddings is also captured:
 
 ![screenshot of traced embedding in phoenix](./images/embedding-trace.png)
+
+Sure, we also get traces for a retrieval chain:
+
+```bash
+rye run python -m demo.04_langchain_rag
+```
+
+![screenshot of langchain traces in phoenix](./images/langchain-traces.png)
