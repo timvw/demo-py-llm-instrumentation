@@ -5,7 +5,10 @@ description = "Demonstrate LLM instrumentation"
 authors = [
     { name = "Tim Van Wassenhove", email = "github@timvw.be" }
 ]
-dependencies = []
+dependencies = [
+    "openai>=1.51.2",
+    "python-dotenv>=1.0.1",
+]
 readme = "README.md"
 requires-python = ">= 3.8"
 
