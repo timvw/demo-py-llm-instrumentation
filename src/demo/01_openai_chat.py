@@ -16,7 +16,7 @@ if __name__ == "__main__":
                 "content": "Say this is a test",
             }
         ],
-        model="gpt-3.5-turbo",
+        model="gpt-4o-mini",
     )
 
     print(chat_completion)
